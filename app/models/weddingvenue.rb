@@ -5,4 +5,5 @@ class Weddingvenue < ApplicationRecord
     validates :price,presence: true
 
     has_many :favourites
+    has_one_attached :photo
 end
