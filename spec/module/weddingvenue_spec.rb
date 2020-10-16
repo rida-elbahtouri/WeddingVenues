@@ -1,7 +1,7 @@
 require 'rails_helper'
 RSpec.describe User, type: :model do
   subject do
-    Weddingvenue.create(name: "name", location: "place", description: "desc", price: 100, photo: nil)
+    Weddingvenue.create(name: 'name', location: 'place', description: 'desc', price: 100, photo: nil)
   end
 
   describe 'Validate fields' do

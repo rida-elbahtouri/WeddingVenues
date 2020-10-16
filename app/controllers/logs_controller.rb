@@ -5,7 +5,7 @@ class LogsController < ApplicationController
     if @user
       render json: @user
     else
-      render json: ("we didn't find any user with that username")
+      render json: "we didn't find any user with that username"
     end
   end
 

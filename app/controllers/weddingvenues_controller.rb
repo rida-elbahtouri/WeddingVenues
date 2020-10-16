@@ -1,9 +1,7 @@
 class WeddingvenuesController < ApplicationController
   def show
     weddingvenue = Weddingvenue.find(params[:id])
-    if weddingvenue
-      render json: weddingvenue
-    end
+    render json: weddingvenue if weddingvenue
   end
 
   def index
@@ -16,7 +14,7 @@ class WeddingvenuesController < ApplicationController
     if weddingvenues.save
       render json: weddingvenues
     else
-      render json: ("we didn't find any user with that username")
+      render json: "we didn't find any user with that username"
     end
   end
 
