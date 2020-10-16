@@ -14,7 +14,7 @@ class WeddingvenuesController < ApplicationController
     if weddingvenues.save
       render json: weddingvenues
     else
-      render json: "we didn't find any user with that username"
+      render json: weddingvenues.errors.full_messages
     end
   end
 
