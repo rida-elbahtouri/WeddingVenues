@@ -21,6 +21,6 @@ class WeddingvenuesController < ApplicationController
     end
     private
     def wedding_params
-        params.permit(:name,:location,:description,:price)
+        params.permit(:name,:location,:description,:price,:image)
     end
 end
