@@ -17,11 +17,9 @@ RSpec.describe User, type: :model do
       subject.username = nil
       expect(subject).to_not be_valid
     end
-
-  
   end
   describe 'Associations' do
     it { should have_many(:favourites) }
-    it { should have_many(:venues).through('favourites')}
+    it { should have_many(:venues).through('favourites') }
   end
 end

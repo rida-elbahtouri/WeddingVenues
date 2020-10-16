@@ -1,7 +1,7 @@
 require 'rails_helper'
 RSpec.describe User, type: :model do
   subject do
-    Weddingvenue.create(name:"name",location:"place",description:"desc",price:100,photo:nil)
+    Weddingvenue.create(name: "name", location: "place", description: "desc", price: 100, photo: nil)
   end
 
   describe 'Validate fields' do
@@ -21,5 +21,5 @@ RSpec.describe User, type: :model do
   end
   describe 'Associations' do
     it { should have_many(:favourites) }
-    end
+  end
 end
