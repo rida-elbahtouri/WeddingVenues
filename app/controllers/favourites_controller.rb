@@ -1,4 +1,9 @@
 class FavouritesController < ApplicationController
+  def index
+    user = User.find(params[:id])
+    render json: user.venues
+  end
+
   def create
     favourite = Favourite.new(fav_params)
 
