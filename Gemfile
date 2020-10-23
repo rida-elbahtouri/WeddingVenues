@@ -24,7 +24,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'hirb'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
-gem 'rack-cors',:require => 'rack/cors'
+gem 'rack-cors', require: 'rack/cors'
 
 # add secure password
 gem 'bcrypt', '~> 3.1', '>= 3.1.16'
