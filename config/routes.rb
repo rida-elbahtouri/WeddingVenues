@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :logs
   resources :weddingvenues
   resources :favourites
+
 end
