@@ -1,9 +1,9 @@
 class LogsController < ApplicationController
   def create
-    @user = User.find_by(username: params[:username])
+    user = User.find_by(username: params[:username])
 
-    if @user
-      render json: @user
+    if user
+      render json: user
     else
       render json: "we didn't find any user with that username"
     end
