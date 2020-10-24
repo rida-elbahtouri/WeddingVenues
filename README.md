@@ -70,16 +70,17 @@ Base URL : https://mighty-headland-70407.herokuapp.com
 Post your username with the param username
 To: BaseUrl/users
 
-- it will return the User username and id
+- it will return the User Token (that change after each login)
 
-### Log in with username
+### Log in with username and password
 Post your username with the param username
+and password with param password
 To: BaseUrl/logs
 
-- it will return the User username and id
+- it will return the User token
 
 ### add to favourite
-Post the user_id and the weddingvenue_id to BaseUrl/favourites
+Post the token and the weddingvenue_id to BaseUrl/favourites
 - it will return "we added to your favourites"
 ### see all Weddingvenues
 Get BaseUrl/weddingvenues
