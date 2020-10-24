@@ -1,10 +1,9 @@
 class UsersController < ApplicationController
- 
   def create
     user = User.new(userparams)
     if user.save
-    render json: {
-      token: user.token
+      render json: {
+        token: user.token
       }
     else
       render json: {

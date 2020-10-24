@@ -6,8 +6,8 @@ class LogsController < ApplicationController
     if user
       user.regenerate_token
       render json: {
-      token: user.token
-    }
+        token: user.token
+      }
     else
       render json: {
         error: user.errors.full_messages
@@ -19,6 +19,6 @@ class LogsController < ApplicationController
   private
 
   def user_params
-    params.permit(:username,:password)
+    params.permit(:username, :password)
   end
 end
