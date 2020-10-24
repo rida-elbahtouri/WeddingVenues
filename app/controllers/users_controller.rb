@@ -1,12 +1,10 @@
 class UsersController < ApplicationController
+ 
   def create
     user = User.new(userparams)
     if user.save
-      session[:user_id] = user.id
-      render json: {
-        status: :created,
-        loggen_in: true,
-        user: user
+    render json: {
+      token: user.token
       }
     else
       render json: {

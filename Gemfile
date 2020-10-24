@@ -24,8 +24,8 @@ gem 'jbuilder', '~> 2.7'
 gem 'hirb'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
-gem 'rack-cors', require: 'rack/cors'
-
+gem 'rack-cors'
+gem 'has_secure_token', '~> 1.0'
 # add secure password
 gem 'bcrypt', '~> 3.1', '>= 3.1.16'
 # Reduces boot times through caching; required in config/boot.rb
