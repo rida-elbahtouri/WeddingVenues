@@ -10,7 +10,7 @@ class LogsController < ApplicationController
       }
     else
       render json: {
-        error: user.errors.full_messages
+        error: 'no user with this info'
       }
 
     end
