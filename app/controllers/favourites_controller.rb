@@ -1,7 +1,7 @@
 class FavouritesController < ApplicationController
   before_action :pundit_user
   def index
-    render json: pundit_user.favourites
+    render json: pundit_user.venues
   end
 
   def create
