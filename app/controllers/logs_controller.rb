@@ -2,11 +2,12 @@ class LogsController < ApplicationController
   def create
     user = User
       .find_by(username: params['username'])
-      .try(:authenticate, params['password'])
-    if user
-      user.regenerate_token
+
+    if user &.try(:authenticate, params['password'])
+      data = user.attributes
+      token = JsonWebToken.encode(data)
       render json: {
-        token: user.token
+        token: token
       }
     else
       render json: {

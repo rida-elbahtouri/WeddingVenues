@@ -2,8 +2,9 @@ class UsersController < ApplicationController
   def create
     user = User.new(userparams)
     if user.save
+      token = JsonWebToken.encode(user.attributes)
       render json: {
-        token: user.token
+        token: token
       }
     else
       render json: {

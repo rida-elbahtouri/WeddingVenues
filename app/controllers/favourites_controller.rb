@@ -1,12 +1,11 @@
 class FavouritesController < ApplicationController
+  before_action :pundit_user
   def index
-    user = User.find_by(token: params[:token])
-    render json: user.venues
+    render json: pundit_user.favourites
   end
 
   def create
-    user = User.find_by(token: params[:token])
-    favourite = Favourite.new(user_id: user.id, weddingvenue_id: params[:weddingvenue_id])
+    favourite = Favourite.new(user_id: pundit_user.id, weddingvenue_id: params[:weddingvenue_id])
 
     if favourite.save
       render json: 'we added to your favourites'
@@ -16,9 +15,7 @@ class FavouritesController < ApplicationController
   end
 
   def destroy
-    user = User.find_by(token: params[:token])
-
-    favourite = user.favourites.find(params[:id])
+    favourite = pundit_user.favourites.find(params[:id])
     render json: 'we deleted it from  your favourites' if favourite.destroy
   end
 end
