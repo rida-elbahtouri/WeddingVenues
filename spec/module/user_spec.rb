@@ -1,7 +1,7 @@
 require 'rails_helper'
 RSpec.describe User, type: :model do
   subject do
-    User.create(username: 'test_username')
+    User.create(username: 'test_username', password: 'password', password_confirmation: 'password')
   end
 
   describe 'Validate username' do
